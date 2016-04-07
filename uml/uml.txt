@@ -1,0 +1,35 @@
+@startuml
+
+title Packages - Class Diagram
+
+
+package calendor <<Node>> {
+
+  class index{
+  
+  }
+  
+  class Modele {
+  
+  }
+  
+  class Salle {
+  
+  }
+  
+  class HtmlGenerator {
+  
+  }
+  
+  class ICalReader {
+  
+  }
+  
+  Modele --"*" Salle
+  HtmlGenerator --"1" Modele
+  ICalReader --"1" Modele
+  
+}
+
+
+@enduml
