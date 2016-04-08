@@ -7,8 +7,10 @@
  */
 class HtmlGenerator {
     
-    public function __construct() {
-        
+    public $modele;
+    
+    public function __construct($modele) {
+        $this->modele = $modele;
     }
     
     public function createHtmlFile() {
@@ -17,7 +19,7 @@ class HtmlGenerator {
         
         //si le fichier existe deja, on le supprime
         if(file_exists($file)){
-            echo 'le fichier existe';
+            //echo 'le fichier existe';
             unlink($file);
         }
         

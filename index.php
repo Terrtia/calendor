@@ -9,15 +9,17 @@ Main class (test version)
     </head>
     <body>
         <?php
-        echo "index\n";
         
         require_once('Modele.php');
+        require_once('ICalReader.php');
         require_once('HtmlGenerator.php');
         
         $modele = new Modele();
-        $modele->test();
         
-        $generator = new HtmlGenerator();
+        $reader = new ICalReader($modele);
+        $reader->readFiles();
+        
+        $generator = new HtmlGenerator($modele);
         $generator->createHtmlFile();
         ?>
     </body>
